@@ -1,0 +1,17 @@
+.Footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color: #1d1d1d;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    box-sizing: border-box;
+    height: 75px;
+}
+
+.Footer-logo {
+    width: 75px;
+}
