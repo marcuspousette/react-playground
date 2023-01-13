@@ -2,8 +2,12 @@ import './App.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Card from './Card';
+import { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [color, setColor] = useState('#f1f3f4')
+
   const shop = { url: '/shop', text: 'Shop' };
   const home = { url: '/home', text: 'Home' };
   const info = { url: '/contact-me', text: 'Contact' };
@@ -31,17 +35,25 @@ function App() {
   ];
 
   const handleCardClick = (title) => {
-    console.log({ title })
-  }
-  
+    console.log({ title });
+  };
 
   return (
     <div className="App">
       <Navbar {...navbarProps} />
-      <main>
-      { data.map((element, i) => {
-          return <Card handleClick={handleCardClick} title={element.title} key={i}>{element.children}</Card>
-        }) }
+      <main >
+        <h1>{color}</h1>
+        <input type="color" value={color} onChange={(event) => {setColor(event.target.value)}}/>
+
+        <div className="main">
+          {data.map((element, i) => {
+            return (
+              <Card handleClick={handleCardClick} color={color} key={i}>
+                {element.children}
+              </Card>
+            );
+          })}
+        </div>
       </main>
       <Footer />
     </div>

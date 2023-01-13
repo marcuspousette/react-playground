@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 0px 50px;
+    padding: 15px 50px;
 }
 
 .Navbar-logo {
@@ -19,4 +19,5 @@
     font-size: 14px;
     display: flex;
     gap: 10px;
+    align-items: center;
 }
